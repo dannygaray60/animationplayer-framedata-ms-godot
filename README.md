@@ -1,5 +1,5 @@
-# animationplayer-framedata-ms-godot
-Godot Plugin for get Frames data of an AnimationPlayer in milliseconds. This can be useful if you want to synchronize the timing of animations made with `AnimationPlayer` with your Aseprite project. Because Asesprite handles frame times in a different way than Godot.
+# AnimationPlayer frames times in Milliseconds
+Godot Plugin for get Frames times of an AnimationPlayer in milliseconds. This can be useful if you want to synchronize the timing of animations made with `AnimationPlayer` with your Aseprite project. Because Asesprite handles frame times in a different way than Godot.
 
 # How to use
 Just copy the `addons/get_animplayer_frame_millis` folder to your addons. And enable the plugin from Project Settings.
