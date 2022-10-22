@@ -1,0 +1,157 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://test_aseprite wizard.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("AnotherTestAsepriteWizard:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "test animation A"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.6, 0.7, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "test animation B"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnotherTestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 4 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TestAsepriteWizard:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 2, 3, 4 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "test animation C"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "test animation D"
+tracks/0/type = "value"
+tracks/0/path = NodePath("TestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "test animation E"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnotherTestAsepriteWizard:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 6, 7 ]
+}
+
+[node name="Node2D" type="Node2D"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+"anims/test animation A" = SubResource( 1 )
+"anims/test animation B" = SubResource( 3 )
+"anims/test animation C" = SubResource( 4 )
+"anims/test animation D" = SubResource( 5 )
+"anims/test animation E" = SubResource( 6 )
+__meta__ = {
+"_editor_description_": "Frame 0 : 400 ms 
+Frame 1 : 200 ms 
+Frame 2 : 100 ms 
+Frame 3 : 300 ms 
+"
+}
+
+[node name="TestAsepriteWizard" type="Sprite" parent="."]
+position = Vector2( 529, 292 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+hframes = 9
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnotherTestAsepriteWizard" type="Sprite" parent="."]
+modulate = Color( 0, 1, 0.203922, 1 )
+position = Vector2( 276, 105 )
+scale = Vector2( 8, 8 )
+texture = ExtResource( 1 )
+hframes = 9
+__meta__ = {
+"_edit_lock_": true
+}
