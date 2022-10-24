@@ -107,6 +107,7 @@ func _on_OptionButtonTracksList_item_selected(index: int) -> void:
 	)
 	
 	var track_keys_times : Array
+	var track_keys_frame_numbers : Array
 
 	## limpiar lista de botones de los frames
 	for b in $VBoxContainer/ScrollContainer/HFlowContainerFrames.get_children():
@@ -120,6 +121,10 @@ func _on_OptionButtonTracksList_item_selected(index: int) -> void:
 		track_keys_times.append(
 			AnimationObj.track_get_key_time(track_idx, track_key_idx)
 		)
+		track_keys_frame_numbers.append(
+			AnimationObj.track_get_key_value(track_idx, track_key_idx)
+		)
+		
 
 	var i : int = 0
 	for key_time in track_keys_times:
@@ -177,13 +182,13 @@ func _on_OptionButtonTracksList_item_selected(index: int) -> void:
 						(track_keys_times[i+1]*1000) - (key_time*1000)
 					)
 		## sumar si numero termina en 99
-		if str(millis).ends_with("99"):
+		if str(millis).ends_with("9"):
 			millis += 1
 
 		## añadir boton de frame con el i como frame idx y el millis
 		## (representa cuantos milisegundos debe durar)
 		var Btn = Button.new()
-		Btn.text = "Frame %d : %d ms" % [i, millis]
+		Btn.text = "Frame %d : %d ms" % [track_keys_frame_numbers[i], millis]
 		Btn.size_flags_horizontal = 3
 		## conectar señal
 		Btn.connect("pressed", self, "_on_BtnFrame_pressed", [millis])

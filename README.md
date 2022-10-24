@@ -3,7 +3,7 @@ Godot Plugin for get Frames times of an AnimationPlayer in milliseconds. This ca
 
 # How to use
 Just copy the `addons/get_animplayer_frame_millis` folder to your addons. And enable the plugin from Project Settings.
-Now you have a new dock, select any `AnimationPlayer` and in the dock you can get all frame data. Copy to clipboard each frame duration in milliseconds. 
+Now you have a new dock, select any `AnimationPlayer` and in the dock you can get all frame data. When you click any frame button, the frame duration in milliseconds will be copied to clipboard. 
 
 ![](https://raw.githubusercontent.com/dannygaray60/animationplayer-framedata-ms-godot/main/use.gif)
 
